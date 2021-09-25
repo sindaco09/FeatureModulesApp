@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/main">
+    <fragment
+        android:id="@+id/main"
+        tools:layout="@layout/fragment_main"
+        android:name="com.example.featuremodulesapp.ui.main.MainFragment" >
+        <action
+            android:id="@+id/go_to_secondary"
+            app:destination="@id/secondary" />
+        <action
+            android:id="@+id/go_to_feature_graph"
+            app:destination="@id/feature_graph" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/secondary"
+        tools:layout="@layout/activity_secondary"
+        android:name="com.example.featuremodulesapp.ui.secondary.SecondaryFragment" />
+
+    <include-dynamic
+        android:id="@+id/feature_graph"
+        app:moduleName="dynamicfeature"
+        app:graphResName="feature_graph"
+        app:graphPackage="${applicationId}.dynamicfeature" />
+
+</navigation>
