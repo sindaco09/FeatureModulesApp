@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.featuremodulesapp.R
 import com.example.featuremodulesapp.databinding.FragmentMainBinding
+import com.example.featuremodulesapp.util.FeatureActivity
 
 class MainFragment: Fragment(R.layout.fragment_main) {
 
@@ -20,12 +21,18 @@ class MainFragment: Fragment(R.layout.fragment_main) {
     }
 
     private fun init() {
-        binding.featureBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.goToFeatureGraph())
-        }
+        with(binding) {
+            featureActivityBtn.setOnClickListener {
+                MainActivity.launchModuleActivity(requireActivity(), FeatureActivity)
+            }
 
-        binding.secondaryBtn.setOnClickListener {
-            findNavController().navigate(MainFragmentDirections.goToSecondary())
+            featureFragmentBtn.setOnClickListener {
+                findNavController().navigate(MainFragmentDirections.goToFeatureGraph())
+            }
+
+            secondaryFragmentBtn.setOnClickListener {
+                findNavController().navigate(MainFragmentDirections.goToSecondary())
+            }
         }
     }
 

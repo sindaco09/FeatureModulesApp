@@ -16,19 +16,27 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
     <Button
-        android:id="@+id/feature_btn"
+        android:id="@+id/feature_fragment_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="feature module"
+        android:text="go to Feature fragment via navhost"
         app:layout_constraintTop_toBottomOf="@id/helloworld"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
     <Button
-        android:id="@+id/secondary_btn"
+        android:id="@+id/feature_activity_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="secondary"
-        app:layout_constraintTop_toBottomOf="@id/feature_btn"
+        android:text="go to Feature activity via startactivity"
+        app:layout_constraintTop_toBottomOf="@id/feature_fragment_btn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:id="@+id/secondary_fragment_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="go to native secondary fragment"
+        app:layout_constraintTop_toBottomOf="@id/feature_activity_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
