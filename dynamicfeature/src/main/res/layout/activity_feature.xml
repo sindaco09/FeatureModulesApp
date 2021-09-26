@@ -6,17 +6,48 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#6483C1"
-    tools:context=".FeatureActivity">
-    <TextView
-        android:id="@+id/feature"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="feature test"
-        android:textColor="@color/black"
-        android:textSize="22sp"
+    tools:context=".ui.FeatureActivity">
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guide"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent=".5"/>
+    <EditText
+        android:id="@+id/token_et"
+        android:hint="token"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintTop_toBottomOf="@id/guide"
+        android:layout_margin="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content" />
+    <TextView
+        android:id="@+id/token_tv"
+        android:text="Token: "
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/token_et"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+    <Button
+        android:id="@+id/submit_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/token_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="submit token"/>
+
+    <Button
+        android:id="@+id/get_token"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/submit_token"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="get token"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

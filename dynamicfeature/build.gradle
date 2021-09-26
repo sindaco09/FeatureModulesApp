@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.dynamic-feature'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 android {
     compileSdk 31
@@ -20,8 +21,22 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    buildFeatures {
+        viewBinding true
+        dataBinding true
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
 }
 
 dependencies {
     implementation project(":app")
+    kapt "com.google.dagger:hilt-compiler:$hilt_version"
 }
