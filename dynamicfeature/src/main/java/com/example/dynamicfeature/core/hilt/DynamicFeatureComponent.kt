@@ -11,9 +11,9 @@ import javax.inject.Singleton
 
 @Singleton
 @Component(
-    dependencies = [DynamicFeatureDependencies::class]
-//    , modules = [ViewModelModule::class]
-    )
+    dependencies = [DynamicFeatureDependencies::class],
+    modules = [ViewModelModule::class]
+)
 interface DynamicFeatureComponent {
 
     fun inject(fragment: FeatureFragment)

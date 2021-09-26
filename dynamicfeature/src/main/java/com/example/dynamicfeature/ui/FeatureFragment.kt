@@ -2,22 +2,33 @@ package com.example.dynamicfeature.ui
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.dynamicfeature.R
 import com.example.dynamicfeature.core.hilt.Injector
-import com.example.dynamicfeature.data.FeatureRepository
 import com.example.dynamicfeature.databinding.ActivityFeatureBinding
 import com.example.featuremodulesapp.core.hilt.viewmodel.ViewModelFactory
 import com.example.featuremodulesapp.util.viewBinding
 import javax.inject.Inject
 
+/*
+ * Below either method of injecting ViewModel works
+ * Use (1) to use a shared viewmodel between fragments/activities
+ * (1) @Inject lateinit var viewModelFactory: ViewModelFactory
+ * .. viewModel = ViewModelProvider(this, viewModelFactory)[FeatureViewModel::class.java]
+ *
+ * Use (2) to use a private single-use viewModel (like for a fragment lifecycle)
+ * (2) @Inject lateinit var viewModel: FeatureViewModel
+*/
 class FeatureFragment : Fragment(R.layout.activity_feature) {
 
+//    @Inject lateinit var viewModel: FeatureViewModel
+
     @Inject
-    lateinit var featureRepository: FeatureRepository
+    lateinit var viewModelFactory: ViewModelFactory
+
+    private lateinit var viewModel: FeatureViewModel
 
     private val binding: ActivityFeatureBinding by viewBinding(ActivityFeatureBinding::bind)
 
@@ -26,7 +37,7 @@ class FeatureFragment : Fragment(R.layout.activity_feature) {
 
         Injector.from(requireContext()).inject(this)
 
-        Log.d("TAG","repo.token: ${featureRepository.token}")
+        viewModel = ViewModelProvider(this, viewModelFactory)[FeatureViewModel::class.java]
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -37,19 +48,14 @@ class FeatureFragment : Fragment(R.layout.activity_feature) {
 
     @SuppressLint("SetTextI18n")
     private fun init() {
+        with(binding) {
+            viewModel.token.observe(viewLifecycleOwner) { tokenTv.text = "Token: $it" }
 
-//        viewModel.token.observe(viewLifecycleOwner) {
-//            binding.tokenTv.text = "Token: ${viewModel.getToken()}"
-//        }
+            submitToken.setOnClickListener { viewModel.setToken(tokenEt.text.toString()) }
 
-        binding.submitToken.setOnClickListener {
-            featureRepository.token = binding.tokenEt.text.toString()
-//            viewModel.setToken(binding.tokenEt.text.toString())
-        }
-
-        binding.getToken.setOnClickListener {
-            val printToken = "Token: ${featureRepository.token}"
-            binding.tokenTv.text = printToken
+            getToken.setOnClickListener {
+                tokenTv.text = viewModel.printPrettyToken()
+            }
         }
     }
 }

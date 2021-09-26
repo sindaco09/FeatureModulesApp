@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.dynamicfeature.ui.FeatureViewModel
 import com.example.featuremodulesapp.core.hilt.viewmodel.ViewModelFactory
+import com.example.featuremodulesapp.core.hilt.viewmodel.ViewModelKey
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -20,12 +21,15 @@ import dagger.multibindings.IntoMap
  * private lateinit var viewModel: RemoteLoginViewModel
  * viewModel = ViewModelProvider(requireActivity(), viewModelFactory)[RemoteLoginViewModel::class.java]
  */
-//@InstallIn(SingletonComponent::class)
-//@Module
+@InstallIn(SingletonComponent::class)
+@Module
 abstract class ViewModelModule {
 
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(FeatureViewModel::class)
-//    abstract fun provideRemoteViewModel(viewModel: FeatureViewModel): ViewModel
+    @Binds
+    abstract fun bindViewModelFactory(factory: ViewModelFactory): ViewModelProvider.Factory
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(FeatureViewModel::class)
+    abstract fun provideRemoteViewModel(viewModel: FeatureViewModel): ViewModel
 }
