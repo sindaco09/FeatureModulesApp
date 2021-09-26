@@ -1,4 +1,4 @@
-package com.example.dynamicfeature.core.hilt
+package com.example.dynamicfeature.core.hilt.modules
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

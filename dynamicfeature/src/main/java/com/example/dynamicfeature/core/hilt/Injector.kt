@@ -1,9 +1,7 @@
 package com.example.dynamicfeature.core.hilt
 
 import android.content.Context
-import androidx.fragment.app.Fragment
-import com.example.featuremodulesapp.core.hilt.featuremodules.DynamicFeatureDependencies
-import com.example.featuremodulesapp.ui.DaggerApp_HiltComponents_SingletonC
+import com.example.featuremodulesapp.core.hilt.dependencies.DynamicFeatureDependencies
 import dagger.hilt.android.EntryPointAccessors
 
 object Injector {

@@ -1,13 +1,11 @@
 package com.example.dynamicfeature.ui
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
-import androidx.lifecycle.viewModelScope
+import androidx.lifecycle.*
 import com.example.dynamicfeature.data.FeatureRepository
 import com.example.featuremodulesapp.core.hilt.IODispatcher
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import javax.inject.Inject
@@ -30,4 +28,6 @@ class FeatureViewModel @Inject constructor(
     private fun getToken(): String? = repo.token
 
     fun printPrettyToken() = "Token: ${getToken()}"
+
+    fun getRepos() = liveData(dispatcher) { emit(repo.getRepos())}
 }
