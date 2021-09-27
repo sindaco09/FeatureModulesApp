@@ -1,4 +1,4 @@
-package com.example.featuremodulesapp.core.hilt.shared
+package com.example.featuremodulesapp.core.hilt.modules
 
 import com.example.featuremodulesapp.core.hilt.IODispatcher
 import dagger.Module

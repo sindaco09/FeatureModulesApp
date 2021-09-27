@@ -1,4 +1,4 @@
-package com.example.featuremodulesapp.core.hilt.network
+package com.example.featuremodulesapp.core.hilt.modules.network
 
 import dagger.Module
 import dagger.Provides

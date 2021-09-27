@@ -9,9 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.example.dynamicfeature.R
 import com.example.dynamicfeature.core.hilt.Injector
-import com.example.dynamicfeature.data.models.GitHubRepo
 import com.example.dynamicfeature.databinding.FragmentFeatureBinding
 import com.example.featuremodulesapp.core.hilt.viewmodel.ViewModelFactory
+import com.example.featuremodulesapp.data.models.GitHubRepo
 import com.example.featuremodulesapp.util.viewBinding
 import javax.inject.Inject
 

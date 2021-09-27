@@ -3,10 +3,13 @@ package com.example.dynamicfeature.ui
 import androidx.lifecycle.*
 import com.example.dynamicfeature.data.FeatureRepository
 import com.example.featuremodulesapp.core.hilt.IODispatcher
+import com.example.featuremodulesapp.data.models.GitHubRepo
 import com.example.featuremodulesapp.data.repository.MainRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import retrofit2.Response
 import javax.inject.Inject
 
 class FeatureViewModel @Inject constructor(
@@ -27,7 +30,14 @@ class FeatureViewModel @Inject constructor(
 
     fun getToken(): String? = featureRepository.token
 
-    fun getRepos() = liveData(dispatcher) { emit(featureRepository.getRepos())}
+    fun getRepos(): LiveData<Response<List<GitHubRepo>?>> =
+        MutableLiveData<Response<List<GitHubRepo>?>>().apply {
+            viewModelScope.launch(dispatcher) {
+                featureRepository.getRepos().collect {
+                    postValue(it)
+                }
+            }
+        }
 
 
     // -------------- MainRepository ------------------
