@@ -5,7 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
 
-interface FeatureApiService {
+interface GitHubApiService {
     companion object {
         const val BASE_URL = "https://api.github.com/"
     }

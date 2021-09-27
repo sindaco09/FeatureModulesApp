@@ -6,7 +6,7 @@ import javax.inject.Inject
 import javax.inject.Singleton
 
 @Singleton
-class FeatureApi @Inject constructor(private val featureApiService: FeatureApiService) {
+class GitHubApi @Inject constructor(private val gitHubApiService: GitHubApiService) {
 
-    fun getGithubRepos(): Response<List<GitHubRepo>> = featureApiService.getListRepos("sindaco09").execute()
+    fun getGithubRepos(): Response<List<GitHubRepo>> = gitHubApiService.getListRepos("sindaco09").execute()
 }

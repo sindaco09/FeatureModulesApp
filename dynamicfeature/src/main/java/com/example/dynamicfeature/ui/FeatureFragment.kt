@@ -23,10 +23,12 @@ import javax.inject.Inject
  *
  * Use (2) to use a private single-use viewModel (like for a fragment lifecycle)
  * (2) @Inject lateinit var viewModel: FeatureViewModel
+ * --------------------------------------
+ * static variables in a shared repository do not span across modules. MainRepository.username
+ * can be set here. but when returning to :app module and return back here to :dynamicfeature,
+ * the variable MainRepository.username returns to 'null'
 */
 class FeatureFragment : Fragment(R.layout.fragment_feature) {
-
-//    @Inject lateinit var viewModel: FeatureViewModel
 
     @Inject
     lateinit var viewModelFactory: ViewModelFactory
@@ -46,36 +48,51 @@ class FeatureFragment : Fragment(R.layout.fragment_feature) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        init()
+        initFeatureData()
+
+        initMainData()
+
+        initReposNetworkCall()
     }
 
     @SuppressLint("SetTextI18n")
-    private fun init() {
+    private fun initFeatureData() {
         with(binding) {
             viewModel.token.observe(viewLifecycleOwner) { tokenTv.text = "Token: $it" }
 
-            submitToken.setOnClickListener { viewModel.setToken(tokenEt.text.toString()) }
+            submitFeatureToken.setOnClickListener { viewModel.setToken(featureTokenEt.text.toString()) }
 
-            getToken.setOnClickListener {
-                tokenTv.text = viewModel.printPrettyToken()
-            }
+            tokenTv.text = "Token: ${viewModel.getToken()}"
+        }
+    }
 
-            viewModel.getRepos().observe(viewLifecycleOwner) {
-                if (it.isSuccessful)
-                    setListView(it.body())
-                else {
-                    Toast.makeText(requireContext(),"error!: {${it.code()}: ${it.message()}}", Toast.LENGTH_SHORT).show()
-                }
+    // Test app/../MainRepository. does static variables work across modules?
+    // No, static variables lose value when exiting the module
+    @SuppressLint("SetTextI18n")
+    private fun initMainData() {
+        with(binding) {
+            viewModel.username.observe(viewLifecycleOwner) { usernameTv.text = "Username: $it" }
+
+            submitUsername.setOnClickListener { viewModel.setUserName(usernameEt.text.toString()) }
+
+            usernameTv.text = "Username: ${viewModel.getUserName()}"
+        }
+    }
+
+    private fun initReposNetworkCall() {
+        viewModel.getRepos().observe(viewLifecycleOwner) {
+            if (it.isSuccessful)
+                setListView(it.body())
+            else {
+                Toast.makeText(requireContext(),"error!: {${it.code()}: ${it.message()}}", Toast.LENGTH_SHORT).show()
             }
         }
     }
 
     private fun setListView(list: List<GitHubRepo>?) {
-        if (list.isNullOrEmpty())
-            return
-        else {
-            val repoStrs = List(list.size) { list[it].toString() }
-            binding.listView.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, repoStrs)
+        if (!list.isNullOrEmpty()) {
+            val repositories = list.map { it.name }
+            binding.listView.adapter = ArrayAdapter(requireContext(), android.R.layout.simple_list_item_1, repositories)
         }
     }
 }

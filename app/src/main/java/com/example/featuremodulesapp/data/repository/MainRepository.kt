@@ -5,4 +5,5 @@ import javax.inject.Singleton
 
 @Singleton
 class MainRepository @Inject constructor() {
+    var username: String? = null
 }

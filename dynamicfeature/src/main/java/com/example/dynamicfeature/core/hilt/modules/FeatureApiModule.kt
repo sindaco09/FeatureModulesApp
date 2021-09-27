@@ -1,7 +1,7 @@
 package com.example.dynamicfeature.core.hilt.modules
 
-import com.example.dynamicfeature.data.network.FeatureApi
-import com.example.dynamicfeature.data.network.FeatureApiService
+import com.example.dynamicfeature.data.network.GitHubApi
+import com.example.dynamicfeature.data.network.GitHubApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -14,5 +14,5 @@ class FeatureApiModule {
 
     @Provides
     fun provideFeatureApi(retrofit: Retrofit) =
-        FeatureApi(retrofit.create(FeatureApiService::class.java))
+        GitHubApi(retrofit.create(GitHubApiService::class.java))
 }
