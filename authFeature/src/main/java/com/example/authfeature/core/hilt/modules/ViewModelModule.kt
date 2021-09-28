@@ -1,8 +1,8 @@
-package com.example.dynamicfeature.core.hilt.modules
+package com.example.authfeature.core.hilt.modules
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.dynamicfeature.ui.FeatureViewModel
+import com.example.authfeature.ui.AuthViewModel
 import com.example.featuremodulesapp.core.hilt.viewmodel.ViewModelFactory
 import com.example.featuremodulesapp.core.hilt.viewmodel.ViewModelKey
 import dagger.Binds
@@ -30,6 +30,6 @@ abstract class ViewModelModule {
 
     @Binds
     @IntoMap
-    @ViewModelKey(FeatureViewModel::class)
-    abstract fun provideAuthViewModel(viewModel: FeatureViewModel): ViewModel
+    @ViewModelKey(AuthViewModel::class)
+    abstract fun provideAuthViewModel(viewModel: AuthViewModel): ViewModel
 }

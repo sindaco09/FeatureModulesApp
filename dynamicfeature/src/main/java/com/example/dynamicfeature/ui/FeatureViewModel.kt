@@ -3,7 +3,7 @@ package com.example.dynamicfeature.ui
 import androidx.lifecycle.*
 import com.example.dynamicfeature.data.FeatureRepository
 import com.example.featuremodulesapp.core.hilt.IODispatcher
-import com.example.featuremodulesapp.data.models.GitHubRepo
+import com.example.featuremodulesapp.data.models.github.GitHubRepo
 import com.example.featuremodulesapp.data.repository.MainRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.delay

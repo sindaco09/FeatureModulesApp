@@ -14,6 +14,9 @@
         <action
             android:id="@+id/go_to_feature_graph"
             app:destination="@id/feature_graph" />
+        <action
+            android:id="@+id/go_to_auth_graph"
+            app:destination="@id/auth_graph" />
     </fragment>
 
     <fragment
@@ -26,5 +29,11 @@
         app:moduleName="dynamicfeature"
         app:graphResName="feature_graph"
         app:graphPackage="${applicationId}.dynamicfeature" />
+
+    <include-dynamic
+        android:id="@+id/auth_graph"
+        app:moduleName="authFeature"
+        app:graphResName="auth_graph"
+        app:graphPackage="${applicationId}.authFeature" />
 
 </navigation>

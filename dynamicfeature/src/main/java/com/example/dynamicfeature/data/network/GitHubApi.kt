@@ -1,6 +1,6 @@
 package com.example.dynamicfeature.data.network
 
-import com.example.featuremodulesapp.data.models.GitHubRepo
+import com.example.featuremodulesapp.data.models.github.GitHubRepo
 import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton

@@ -2,7 +2,7 @@ package com.example.dynamicfeature.data
 
 import com.example.dynamicfeature.data.network.GitHubApi
 import com.example.dynamicfeature.data.storage.GitHubCache
-import com.example.featuremodulesapp.data.models.GitHubRepo
+import com.example.featuremodulesapp.data.models.github.GitHubRepo
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf
 import retrofit2.Response

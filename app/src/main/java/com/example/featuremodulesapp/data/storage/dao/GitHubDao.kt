@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy.REPLACE
 import androidx.room.Query
-import com.example.featuremodulesapp.data.models.GitHubRepo
+import com.example.featuremodulesapp.data.models.github.GitHubRepo
 
 @Dao
 interface GitHubDao {

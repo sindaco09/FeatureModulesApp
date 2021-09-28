@@ -1,6 +1,6 @@
 package com.example.dynamicfeature.data.storage
 
-import com.example.featuremodulesapp.data.models.GitHubRepo
+import com.example.featuremodulesapp.data.models.github.GitHubRepo
 import com.example.featuremodulesapp.data.storage.dao.GitHubDao
 import javax.inject.Inject
 import javax.inject.Singleton

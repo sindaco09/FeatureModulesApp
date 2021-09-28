@@ -1,4 +1,4 @@
-package com.example.featuremodulesapp.data.models
+package com.example.featuremodulesapp.data.models.github
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
