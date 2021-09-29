@@ -6,7 +6,7 @@
     <fragment
         android:id="@+id/authFragment"
         app:moduleName="authFeature"
-        android:name="com.example.authfeature.ui.AuthFragment"
+        android:name="com.indaco.authfeature.ui.AuthFragment"
         tools:layout="@layout/fragment_auth"
         android:label="AuthFragment" />
 </navigation>

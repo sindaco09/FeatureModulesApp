@@ -7,7 +7,7 @@
     <fragment
         android:id="@+id/main"
         tools:layout="@layout/fragment_main"
-        android:name="com.example.featuremodulesapp.ui.main.MainFragment" >
+        android:name="com.indaco.featuremodulesapp.ui.main.MainFragment" >
         <action
             android:id="@+id/go_to_secondary"
             app:destination="@id/secondary" />
@@ -22,7 +22,7 @@
     <fragment
         android:id="@+id/secondary"
         tools:layout="@layout/activity_secondary"
-        android:name="com.example.featuremodulesapp.ui.secondary.SecondaryFragment" />
+        android:name="com.indaco.featuremodulesapp.ui.secondary.SecondaryFragment" />
 
     <include-dynamic
         android:id="@+id/feature_graph"

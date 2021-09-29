@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:dist="http://schemas.android.com/apk/distribution"
-    package="com.example.authfeature">
+    package="com.indaco.authfeature">
 
     <dist:module
         dist:instant="true"
@@ -15,7 +15,7 @@
 
     <application>
         <activity
-            android:name=".ui.AuthActivity"
+            android:name="com.indaco.authfeature.ui.AuthActivity"
             android:exported="true" />
     </application>
 

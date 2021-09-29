@@ -8,5 +8,5 @@
         app:moduleName="dynamicfeature"
         android:label="Feature"
         tools:layout="@layout/activity_feature"
-        android:name="com.example.dynamicfeature.ui.FeatureFragment" />
+        android:name="com.indaco.dynamicfeature.ui.FeatureFragment" />
 </navigation>

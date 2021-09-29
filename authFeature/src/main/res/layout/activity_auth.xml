@@ -15,5 +15,5 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:name="com.example.authfeature.ui.AuthFragment"/>
+        android:name="com.indaco.authfeature.ui.AuthFragment"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
