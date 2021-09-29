@@ -21,26 +21,6 @@
         android:orientation="horizontal" />
 
     <TextView
-        android:id="@+id/top_description"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="These buttons access featureModule via startActivity"
-        android:textColor="@color/black"
-        android:layout_margin="16dp"
-        android:gravity="center_horizontal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/top_guide" />
-    <Button
-        android:id="@+id/feature_activity_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Feature Activity"
-        app:layout_constraintTop_toBottomOf="@id/top_description"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <TextView
         android:id="@+id/bottom_description"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
@@ -60,20 +40,13 @@
         app:layout_constraintTop_toBottomOf="@id/bottom_description"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
     <Button
         android:id="@+id/auth_fragment_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Auth Fragment"
         app:layout_constraintTop_toBottomOf="@id/feature_fragment_btn"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <Button
-        android:id="@+id/secondary_fragment_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Secondary Fragment"
-        app:layout_constraintTop_toBottomOf="@id/feature_activity_btn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

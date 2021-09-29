@@ -1,11 +1,8 @@
 package com.indaco.featuremodulesapp.ui.main
 
-import android.app.Activity
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.indaco.featuremodulesapp.databinding.ActivityMainBinding
-import com.indaco.featuremodulesapp.util.dynamicPackageName
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -16,12 +13,12 @@ class MainActivity : AppCompatActivity() {
         ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
     }
 
-    companion object {
-        fun launchModuleActivity(activity: Activity, className: String) {
-            Intent().setClassName(activity.packageName, "$dynamicPackageName.$className")
-                .also {
-                    activity.startActivity(it)
-                }
-        }
-    }
+//    companion object {
+//        fun launchModuleActivity(activity: Activity, className: String) {
+//            Intent().setClassName(activity.packageName, "$dynamicPackageName.$className")
+//                .also {
+//                    activity.startActivity(it)
+//                }
+//        }
+//    }
 }

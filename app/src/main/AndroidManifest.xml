@@ -4,7 +4,6 @@
     package="com.indaco.featuremodulesapp">
 
     <dist:module dist:instant="true" />
-
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -28,5 +27,4 @@
             </intent-filter>
         </activity>
     </application>
-
 </manifest>

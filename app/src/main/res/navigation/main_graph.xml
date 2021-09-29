@@ -13,10 +13,10 @@
             app:destination="@id/secondary" />
         <action
             android:id="@+id/go_to_feature_graph"
-            app:destination="@id/feature_graph" />
+            app:destination="@id/feature" />
         <action
             android:id="@+id/go_to_auth_graph"
-            app:destination="@id/auth_graph" />
+            app:destination="@id/authFragment" />
     </fragment>
 
     <fragment
@@ -24,16 +24,14 @@
         tools:layout="@layout/activity_secondary"
         android:name="com.indaco.featuremodulesapp.ui.secondary.SecondaryFragment" />
 
-    <include-dynamic
-        android:id="@+id/feature_graph"
-        app:moduleName="dynamicfeature"
-        app:graphResName="feature_graph"
-        app:graphPackage="${applicationId}.dynamicfeature" />
+    <fragment
+        android:id="@+id/feature"
+        tools:layout="@layout/fragment_feature"
+        android:name="com.indaco.featuremodulesapp.ui.feature.FeatureFragment" />
 
-    <include-dynamic
-        android:id="@+id/auth_graph"
-        app:moduleName="authFeature"
-        app:graphResName="auth_graph"
-        app:graphPackage="${applicationId}.authFeature" />
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.indaco.featuremodulesapp.ui.auth.AuthFragment"
+        tools:layout="@layout/fragment_auth"/>
 
 </navigation>

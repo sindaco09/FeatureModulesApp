@@ -8,5 +8,3 @@ dependencyResolutionManagement {
 }
 rootProject.name = "FeatureModulesApp"
 include ':app'
-include ':dynamicfeature'
-include ':authFeature'
