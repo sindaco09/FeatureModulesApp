@@ -7,14 +7,11 @@ import android.widget.ArrayAdapter
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.ViewModelProvider
 import com.indaco.featuremodulesapp.R
-import com.indaco.featuremodulesapp.core.hilt.viewmodel.ViewModelFactory
-import com.indaco.featuremodulesapp.data.models.github.GitHubRepo
+import com.indaco.data.models.github.GitHubRepo
 import com.indaco.featuremodulesapp.databinding.FragmentFeatureBinding
 import com.indaco.featuremodulesapp.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 /*
  * Below either method of injecting ViewModel works

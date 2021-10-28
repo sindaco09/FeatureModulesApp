@@ -1,6 +1,6 @@
 package com.indaco.featuremodulesapp.data.network
 
-import com.indaco.featuremodulesapp.data.models.github.GitHubRepo
+import com.indaco.data.models.github.GitHubRepo
 import retrofit2.Response
 import javax.inject.Inject
 import javax.inject.Singleton

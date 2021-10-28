@@ -1,7 +1,7 @@
 package com.indaco.featuremodulesapp.data.storage.cache
 
-import com.indaco.featuremodulesapp.data.models.github.GitHubRepo
-import com.indaco.featuremodulesapp.data.storage.dao.GitHubDao
+import com.indaco.data.models.github.GitHubRepo
+import com.indaco.data.storage.dao.GitHubDao
 import javax.inject.Inject
 import javax.inject.Singleton
 

@@ -5,7 +5,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.indaco.featuremodulesapp.core.hilt.IODispatcher
-import com.indaco.featuremodulesapp.data.models.auth.User
+import com.indaco.data.models.auth.User
 import com.indaco.featuremodulesapp.data.repository.AuthRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.CoroutineDispatcher
