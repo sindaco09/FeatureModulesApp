@@ -1,0 +1,13 @@
+ext.flavorConfig = {
+
+    flavorDimensions "experience"
+
+    productFlavors {
+        installed {
+        }
+        instant {
+        }
+        onboard {
+        }
+    }
+}

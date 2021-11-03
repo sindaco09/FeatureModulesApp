@@ -4,15 +4,7 @@
     package="com.indaco.featuremodulesapp"
     android:targetSandboxVersion="2">
 
-    <dist:module
-        dist:instant="true"
-        dist:title="@string/app_name" >
-        <dist:delivery>
-            <dist:install-time />
-        </dist:delivery>
-
-        <dist:fusing dist:include="false" />
-    </dist:module>
+    <dist:module dist:instant="true" />
 
     <application
         android:allowBackup="true"
