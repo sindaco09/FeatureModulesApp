@@ -12,13 +12,4 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         ActivityMainBinding.inflate(layoutInflater).also { setContentView(it.root) }
     }
-
-//    companion object {
-//        fun launchModuleActivity(activity: Activity, className: String) {
-//            Intent().setClassName(activity.packageName, "$dynamicPackageName.$className")
-//                .also {
-//                    activity.startActivity(it)
-//                }
-//        }
-//    }
 }

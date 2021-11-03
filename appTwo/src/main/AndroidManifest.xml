@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.indaco.featuremodulesapp">
+    xmlns:dist="http://schemas.android.com/apk/distribution"
+    package="com.indaco.featuremodulesapp"
+    android:targetSandboxVersion="2">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <dist:module dist:instant="true" />
 
     <application
-        android:name=".ui.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -13,10 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FeatureModulesApp">
         <activity
-            android:name=".ui.secondary.SecondaryActivity"
-            android:exported="true" />
-        <activity
-            android:name=".ui.main.MainActivity"
+            android:name="com.indaco.instantlibrary.InstantActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,11 +41,10 @@
                     android:scheme="http"
                     android:host="sindaco09.github.io" />
             </intent-filter>
+            <meta-data
+                android:name="default-url"
+                android:value="https://sindaco09.github.io" />
         </activity>
-
-        <meta-data
-            android:name="default-url"
-            android:value="https://sindaco09.github.io" />
     </application>
 
 </manifest>

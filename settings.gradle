@@ -8,8 +8,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "FeatureModulesApp"
 include ':app'
-include ':instantFeature'
-include ':installedFeature'
 include ':data'
-include ':instantApp'
+include ':appTwo'
 include ':instantLibrary'

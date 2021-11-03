@@ -6,37 +6,40 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
-android {
+Properties properties = new Properties()
+if (project.rootProject.file('local.properties').canRead()) {
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+}
 
+android {
     compileSdk 31
+
+    signingConfigs {
+        release {
+            storeFile file(properties['STORE_FILE'])
+            storePassword properties['STORE_PASSWORD']
+            keyAlias properties['KEY_ALIAS']
+            keyPassword properties['KEY_PASSWORD']
+        }
+    }
 
     defaultConfig {
         applicationId "com.indaco.featuremodulesapp"
         minSdk 26
         targetSdk 31
         versionName "1.1"
+        versionCode 2106
+        versionName "1.1.$versionCode-installed"
     }
 
     buildTypes {
         release {
             minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
-        }
-    }
-
-    flavorDimensions "experience"
-
-    productFlavors {
-        installed {
-            versionCode 2103
-            versionName "1.1.2101-installed"
-        }
-        instant {
-            versionCode 1103
-            versionName "1.1.1101-instant"
         }
     }
 
@@ -53,11 +56,11 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
-    dynamicFeatures = [':instantFeature', ':installedFeature']
 }
 
 dependencies {
-    implementation project(path: ':data')
+    implementation project(':data')
+    implementation project(':instantLibrary')
 
     // Core
     implementation 'androidx.core:core-ktx:1.6.0'

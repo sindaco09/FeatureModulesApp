@@ -20,6 +20,15 @@
         app:layout_constraintGuide_percent=".5"
         android:orientation="horizontal" />
 
+    <Button
+        android:id="@+id/instant_feature_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Instant Feature"
+        app:layout_constraintBottom_toTopOf="@id/bottom_description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <TextView
         android:id="@+id/bottom_description"
         android:layout_width="0dp"

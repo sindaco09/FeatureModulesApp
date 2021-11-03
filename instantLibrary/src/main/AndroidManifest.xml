@@ -4,4 +4,11 @@
     package="com.indaco.instantlibrary">
 
     <dist:module dist:instant="true" />
+
+    <application>
+        <activity
+            android:name=".InstantActivity"
+            android:exported="true" />
+    </application>
+
 </manifest>
