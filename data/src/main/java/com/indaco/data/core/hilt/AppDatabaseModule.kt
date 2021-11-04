@@ -12,7 +12,7 @@ import dagger.hilt.components.SingletonComponent
 @Module
 class AppDatabaseModule {
     @Provides
-    fun provideDB(application: Application) =
+    fun provideDB(application: Application): AppDatabase =
         Room.databaseBuilder(application, AppDatabase::class.java, "database")
             .fallbackToDestructiveMigration()
             .build()
