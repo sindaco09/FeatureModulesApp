@@ -10,3 +10,4 @@ rootProject.name = "FeatureModulesApp"
 include ':app'
 include ':instantFeature'
 include ':data'
+include ':apptwo'
