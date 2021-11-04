@@ -3,6 +3,11 @@ plugins {
     id 'kotlin-android'
 }
 
+Properties properties = new Properties()
+if (project.rootProject.file('local.properties').canRead()) {
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+}
+
 android {
     compileSdk 31
 
@@ -15,9 +20,19 @@ android {
 
     }
 
+    signingConfigs {
+        release {
+            storeFile file(properties['STORE_FILE'])
+            storePassword properties['STORE_PASSWORD']
+            keyAlias properties['KEY_ALIAS']
+            keyPassword properties['KEY_PASSWORD']
+        }
+    }
+    
     buildTypes {
         release {
             minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {

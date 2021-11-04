@@ -6,6 +6,11 @@ plugins {
     id 'dagger.hilt.android.plugin'
 }
 
+Properties properties = new Properties()
+if (project.rootProject.file('local.properties').canRead()) {
+    properties.load(project.rootProject.file("local.properties").newDataInputStream())
+}
+
 android {
 
     compileSdk 31
@@ -18,9 +23,19 @@ android {
         versionName "1.1.$versionCode-installed"
     }
 
+    signingConfigs {
+        release {
+            storeFile file(properties['STORE_FILE'])
+            storePassword properties['STORE_PASSWORD']
+            keyAlias properties['KEY_ALIAS']
+            keyPassword properties['KEY_PASSWORD']
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         debug {
@@ -61,11 +76,11 @@ dependencies {
     kapt "com.google.dagger:hilt-compiler:$hilt_version"
 
     // Lifecycle
-    implementation 'androidx.lifecycle:lifecycle-common-java8:2.3.1'
+    implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
     implementation 'androidx.lifecycle:lifecycle-extensions:2.2.0'
     implementation "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
-    implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.3.1"
+    implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
 
     // Navigation
     implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"

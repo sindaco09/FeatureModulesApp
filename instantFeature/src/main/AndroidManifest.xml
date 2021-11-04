@@ -10,17 +10,6 @@
             android:name=".InstantActivity"
             android:exported="true"
             android:label="@string/title_activity_instant"
-            android:theme="@style/Theme.FeatureModulesApp.NoActionBar" >
-<!--            <intent-filter android:autoVerify="true">-->
-<!--                <action android:name="android.intent.action.VIEW" />-->
-
-<!--                <category android:name="android.intent.category.DEFAULT" />-->
-<!--                <category android:name="android.intent.category.BROWSABLE" />-->
-
-<!--                <data android:scheme="https" />-->
-<!--                <data android:scheme="http" />-->
-<!--                <data android:host="sindaco09.github.io" />-->
-<!--            </intent-filter>-->
-        </activity>
+            android:theme="@style/Theme.FeatureModulesApp.NoActionBar" />
     </application>
 </manifest>
