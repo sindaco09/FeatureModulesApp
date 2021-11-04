@@ -9,6 +9,4 @@ dependencyResolutionManagement {
 rootProject.name = "FeatureModulesApp"
 include ':app'
 include ':instantFeature'
-include ':main'
 include ':data'
-include ':onboard'

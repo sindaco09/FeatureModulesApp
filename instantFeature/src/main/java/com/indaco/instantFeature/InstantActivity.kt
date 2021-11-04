@@ -7,17 +7,17 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import com.indaco.instantFeature.databinding.ActivityMainBinding
+import com.indaco.instantFeature.databinding.ActivityInstantBinding
 
-class MainActivity : AppCompatActivity() {
+class InstantActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
-private lateinit var binding: ActivityMainBinding
+private lateinit var binding: ActivityInstantBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-     binding = ActivityMainBinding.inflate(layoutInflater)
+     binding = ActivityInstantBinding.inflate(layoutInflater)
      setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)

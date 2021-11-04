@@ -53,11 +53,11 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
-    dynamicFeatures = [':instantFeature', ':main']
 }
 
 dependencies {
     implementation project(path: ':data')
+    implementation project(path: ':instantFeature')
 
     // Core
     implementation 'androidx.core:core-ktx:1.6.0'
