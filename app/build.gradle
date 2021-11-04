@@ -19,7 +19,7 @@ android {
         applicationId "com.indaco.featuremodulesapp"
         minSdk 26
         targetSdk 31
-        versionCode 2106
+        versionCode 2107
         versionName "1.1.$versionCode-installed"
     }
 
@@ -46,6 +46,10 @@ android {
     buildFeatures {
         viewBinding true
         dataBinding true
+    }
+
+    hilt {
+        enableAggregatingTask = true
     }
 
     compileOptions {
@@ -95,5 +99,5 @@ dependencies {
     // Room
     implementation "androidx.room:room-ktx:$room_version"
     implementation "androidx.room:room-runtime:$room_version"
-    kapt "androidx.room:room-compiler:$room_version"
+//    kapt "androidx.room:room-compiler:$room_version" // multiple room kapts seems to cause bugs
 }
