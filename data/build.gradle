@@ -16,13 +16,6 @@ android {
 
     }
 
-    flavorDimensions "experience"
-
-    productFlavors {
-        installed {}
-        instant {}
-    }
-
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11

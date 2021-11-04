@@ -14,7 +14,8 @@ android {
         applicationId "com.indaco.featuremodulesapp"
         minSdk 26
         targetSdk 31
-        versionName "1.1"
+        versionCode 2106
+        versionName "1.1.$versionCode-installed"
     }
 
     buildTypes {
@@ -24,19 +25,6 @@ android {
         }
         debug {
             minifyEnabled false
-        }
-    }
-
-    flavorDimensions "experience"
-
-    productFlavors {
-        installed {
-            versionCode 2103
-            versionName "1.1.2101-installed"
-        }
-        instant {
-            versionCode 1103
-            versionName "1.1.1101-instant"
         }
     }
 

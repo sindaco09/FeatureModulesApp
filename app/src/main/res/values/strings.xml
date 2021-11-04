@@ -3,6 +3,6 @@
     <string name="title_dynamicfeature">Feature</string>
     <string name="title_authfeature">Auth</string>
     <string name="title_instantfeature">Instant Feature</string>
-    <string name="title_activity_main">MainActivity</string>
+    <string name="title_activity_instant">InstantActivity</string>
     <string name="title_main">Main</string>
 </resources>

@@ -3,33 +3,24 @@
     xmlns:dist="http://schemas.android.com/apk/distribution"
     package="com.indaco.instantFeature" >
 
-    <dist:module
-        dist:instant="true"
-        dist:title="@string/title_instantfeature" >
-        <dist:delivery>
-            <dist:install-time />
-        </dist:delivery>
-
-        <dist:fusing dist:include="false" />
-    </dist:module>
+    <dist:module dist:instant="true" />
 
     <application>
         <activity
             android:name=".InstantActivity"
             android:exported="true"
-            android:label="@string/title_activity_main"
+            android:label="@string/title_activity_instant"
             android:theme="@style/Theme.FeatureModulesApp.NoActionBar" >
-            <intent-filter android:autoVerify="true">
-                <action android:name="android.intent.action.VIEW" />
+<!--            <intent-filter android:autoVerify="true">-->
+<!--                <action android:name="android.intent.action.VIEW" />-->
 
-                <category android:name="android.intent.category.DEFAULT" />
-                <category android:name="android.intent.category.BROWSABLE" />
+<!--                <category android:name="android.intent.category.DEFAULT" />-->
+<!--                <category android:name="android.intent.category.BROWSABLE" />-->
 
-                <data android:scheme="https" />
-                <data android:scheme="http" />
-                <data android:host="sindaco09.github.io" />
-            </intent-filter>
+<!--                <data android:scheme="https" />-->
+<!--                <data android:scheme="http" />-->
+<!--                <data android:host="sindaco09.github.io" />-->
+<!--            </intent-filter>-->
         </activity>
     </application>
-
 </manifest>
