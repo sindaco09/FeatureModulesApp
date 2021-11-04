@@ -18,6 +18,16 @@
         <activity
             android:name=".ui.secondary.SecondaryActivity"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".ui.main.MainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
 
@@ -38,19 +48,10 @@
                     android:scheme="http"
                     android:host="sindaco09.github.io" />
             </intent-filter>
+            <meta-data
+                android:name="default-url"
+                android:value="https://sindaco09.github.io" />
         </activity>
-        <activity
-            android:name=".ui.main.MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
-        <meta-data
-            android:name="default-url"
-            android:value="https://sindaco09.github.io" />
     </application>
 
 </manifest>
