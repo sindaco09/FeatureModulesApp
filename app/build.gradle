@@ -43,6 +43,14 @@ android {
         }
     }
 
+    flavorDimensions "default"
+
+    productFlavors {
+        full {
+            dimension "default"
+        }
+    }
+
     buildFeatures {
         viewBinding true
         dataBinding true
@@ -60,6 +68,7 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+    dynamicFeatures = [':dynamicfeature']
 }
 
 dependencies {

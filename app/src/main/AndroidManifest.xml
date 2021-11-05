@@ -17,9 +17,7 @@
         android:theme="@style/Theme.FeatureModulesApp">
         <activity
             android:name=".ui.secondary.SecondaryActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true">
@@ -35,8 +33,8 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="https"
-                    android:host="sindaco09.github.io" />
+                    android:host="sindaco09.github.io"
+                    android:scheme="https" />
             </intent-filter>
             <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
@@ -45,9 +43,10 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data
-                    android:scheme="http"
-                    android:host="sindaco09.github.io" />
+                    android:host="sindaco09.github.io"
+                    android:scheme="http" />
             </intent-filter>
+
             <meta-data
                 android:name="default-url"
                 android:value="https://sindaco09.github.io" />
