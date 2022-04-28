@@ -9,7 +9,6 @@ import com.google.android.gms.common.wrappers.InstantApps.isInstantApp
 import com.indaco.featuremodulesapp.R
 import com.indaco.featuremodulesapp.databinding.FragmentMainBinding
 import com.indaco.featuremodulesapp.util.viewBinding
-import com.indaco.instantFeature.InstantActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -34,7 +33,8 @@ class MainFragment: Fragment(R.layout.fragment_main) {
                 }
 
             instantLibraryBtn.setOnClickListener {
-                startActivity(Intent(requireContext(), InstantActivity::class.java))
+//                startActivity(Intent(requireContext(), InstantActivity::class.java))
+                startActivity(Intent().setClassName(requireContext().packageName, "com.indaco.dynamicfeature.DynamicActivity"))
             }
 
             authFragmentBtn.setOnClickListener {

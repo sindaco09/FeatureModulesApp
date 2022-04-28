@@ -16,7 +16,7 @@ android {
         minSdk 26
         targetSdk 31
         versionCode 1000 + app_code
-        versionName "1.1.$versionCode-installed"
+        versionName "1.1.$versionCode-instant"
 
     }
 
@@ -63,6 +63,7 @@ android {
 dependencies {
     implementation project(':instantFeature')
 
+    api "com.google.android.gms:play-services-instantapps:17.0.1"
     implementation "androidx.core:core-ktx:$ktx_version"
     implementation "androidx.appcompat:appcompat:$appcompat_version"
     implementation "com.google.android.material:material:$material_version"
