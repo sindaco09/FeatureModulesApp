@@ -1,6 +1,6 @@
 package com.indaco.featuremodulesapp.data.repository
 
-import com.indaco.data.models.auth.User
+import com.indaco.featuremodulesapp.datalibrary.models.auth.User
 import com.indaco.featuremodulesapp.data.storage.cache.AuthCache
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOf

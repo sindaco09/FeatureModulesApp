@@ -1,6 +1,6 @@
 package com.indaco.featuremodulesapp.data.repository
 
-import com.indaco.data.models.github.GitHubRepo
+import com.indaco.featuremodulesapp.datalibrary.models.github.GitHubRepo
 import com.indaco.featuremodulesapp.data.network.GitHubApi
 import com.indaco.featuremodulesapp.data.storage.cache.GitHubCache
 import kotlinx.coroutines.flow.Flow

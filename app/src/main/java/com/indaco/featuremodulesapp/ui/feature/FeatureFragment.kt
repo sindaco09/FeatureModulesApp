@@ -8,7 +8,7 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.indaco.featuremodulesapp.R
-import com.indaco.data.models.github.GitHubRepo
+import com.indaco.featuremodulesapp.datalibrary.models.github.GitHubRepo
 import com.indaco.featuremodulesapp.databinding.FragmentFeatureBinding
 import com.indaco.featuremodulesapp.util.viewBinding
 import dagger.hilt.android.AndroidEntryPoint

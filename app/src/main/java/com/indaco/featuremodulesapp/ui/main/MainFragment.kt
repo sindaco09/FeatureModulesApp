@@ -29,16 +29,16 @@ class MainFragment: Fragment(R.layout.fragment_main) {
                 featureFragmentBtn.visibility = View.GONE
             else
                 featureFragmentBtn.setOnClickListener {
-                    findNavController().navigate(MainFragmentDirections.goToFeatureGraph())
+//                    findNavController().navigate(MainFragmentDirections.goToFeatureGraph())
                 }
 
             instantLibraryBtn.setOnClickListener {
 //                startActivity(Intent(requireContext(), InstantActivity::class.java))
-                startActivity(Intent().setClassName(requireContext().packageName, "com.indaco.dynamicfeature.DynamicActivity"))
+//                startActivity(Intent().setClassName(requireContext().packageName, "com.indaco.dynamicfeature.DynamicActivity"))
             }
 
             authFragmentBtn.setOnClickListener {
-                findNavController().navigate(MainFragmentDirections.goToAuthGraph())
+//                findNavController().navigate(MainFragmentDirections.goToAuthGraph())
             }
         }
     }

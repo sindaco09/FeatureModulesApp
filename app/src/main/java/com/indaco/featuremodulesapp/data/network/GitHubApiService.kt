@@ -1,6 +1,6 @@
 package com.indaco.featuremodulesapp.data.network
 
-import com.indaco.data.models.github.GitHubRepo
+import com.indaco.featuremodulesapp.datalibrary.models.github.GitHubRepo
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path

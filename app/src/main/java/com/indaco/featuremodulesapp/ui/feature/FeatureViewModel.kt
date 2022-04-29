@@ -2,7 +2,7 @@ package com.indaco.featuremodulesapp.ui.feature
 
 import androidx.lifecycle.*
 import com.indaco.featuremodulesapp.core.hilt.IODispatcher
-import com.indaco.data.models.github.GitHubRepo
+import com.indaco.featuremodulesapp.datalibrary.models.github.GitHubRepo
 import com.indaco.featuremodulesapp.data.repository.FeatureRepository
 import com.indaco.featuremodulesapp.data.repository.MainRepository
 import dagger.hilt.android.lifecycle.HiltViewModel

@@ -1,4 +1,4 @@
-package com.indaco.featuremodulesapp.core.room
+package com.indaco.featuremodulesapp.datalibrary.core.room
 
 import androidx.room.Database
 import androidx.room.RoomDatabase

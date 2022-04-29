@@ -1,7 +1,7 @@
 package com.indaco.featuremodulesapp.data.storage.cache
 
-import com.indaco.data.models.auth.User
-import com.indaco.data.storage.dao.UserDao
+import com.indaco.featuremodulesapp.datalibrary.models.auth.User
+import com.indaco.featuremodulesapp.datalibrary.dao.UserDao
 import javax.inject.Inject
 import javax.inject.Singleton
 
