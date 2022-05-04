@@ -20,4 +20,6 @@
 # hide the original source file name.
 #-renamesourcefileattribute SourceFile
 
--keep public class com.indaco.dynamicfeature.DynamicFeaturePointImpl
+
+-keep public class com.indaco.data.launcher.DynamicEntryPoint
+-keep public class com.indaco.data.launcher.DynamicDestination

@@ -1,6 +1,7 @@
 plugins {
     id 'com.android.dynamic-feature'
     id 'kotlin-android'
+    id 'kotlin-kapt'
 }
 android {
     compileSdk 31
@@ -24,19 +25,17 @@ android {
             dimension "default"
         }
     }
-
-    sourceSets {
-        full {
-
-        }
-        instant {
-
-        }
-    }
-
 }
 
 dependencies {
+
+    // Google - AutoService
+    kapt 'com.google.auto.service:auto-service:1.0.1'
+    implementation ('com.google.auto.service:auto-service:1.0.1') {
+        transitive = true
+        exclude module: 'guava'
+    }
+
     fullImplementation project(":app")
     instantImplementation project(":apptwo")
     implementation 'androidx.core:core-ktx:1.7.0'

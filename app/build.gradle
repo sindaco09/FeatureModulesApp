@@ -72,8 +72,7 @@ android {
 }
 
 dependencies {
-    implementation project(path: ':data')
-    implementation project(path: ':instantFeature')
+    api project(path: ':data')
 
     // Core
     implementation "androidx.core:core-ktx:$ktx_version"

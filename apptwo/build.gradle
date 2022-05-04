@@ -61,7 +61,6 @@ android {
 }
 
 dependencies {
-    implementation project(':instantFeature')
 
     api "com.google.android.gms:play-services-instantapps:17.0.1"
     implementation "androidx.core:core-ktx:$ktx_version"

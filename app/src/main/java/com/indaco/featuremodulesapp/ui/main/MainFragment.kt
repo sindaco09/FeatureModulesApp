@@ -1,11 +1,11 @@
 package com.indaco.featuremodulesapp.ui.main
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.google.android.gms.common.wrappers.InstantApps.isInstantApp
+import com.indaco.data.launcher.DynamicNavigationHandler
 import com.indaco.featuremodulesapp.R
 import com.indaco.featuremodulesapp.databinding.FragmentMainBinding
 import com.indaco.featuremodulesapp.util.viewBinding
@@ -33,8 +33,7 @@ class MainFragment: Fragment(R.layout.fragment_main) {
                 }
 
             instantLibraryBtn.setOnClickListener {
-//                startActivity(Intent(requireContext(), InstantActivity::class.java))
-                startActivity(Intent().setClassName(requireContext().packageName, "com.indaco.dynamicfeature.DynamicActivity"))
+                DynamicNavigationHandler.startDynamicActivity(requireActivity())
             }
 
             authFragmentBtn.setOnClickListener {
