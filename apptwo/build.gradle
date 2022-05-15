@@ -31,9 +31,9 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             signingConfig signingConfigs.release
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
         debug {
             minifyEnabled false
@@ -61,6 +61,7 @@ android {
 }
 
 dependencies {
+    api project(path: ':data')
 
     api "com.google.android.gms:play-services-instantapps:17.0.1"
     implementation "androidx.core:core-ktx:$ktx_version"
