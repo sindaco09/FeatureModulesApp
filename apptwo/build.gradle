@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'kotlin-android'
 }
+apply from: "${rootProject.projectDir}/flavors.gradle"
 
 Properties properties = new Properties()
 if (project.rootProject.file('local.properties').canRead()) {
@@ -13,8 +14,8 @@ android {
 
     defaultConfig {
         applicationId "com.indaco.featuremodulesapp"
-        minSdk 26
-        targetSdk 31
+        minSdk min_sdk_version
+        targetSdk target_version
         versionCode 1000 + app_code
         versionName "1.1.$versionCode-instant"
 
@@ -40,12 +41,16 @@ android {
         }
     }
 
-    flavorDimensions "default"
+    with flavorConfig
+
+    flavorDimensions "default", "installtype"
 
     productFlavors {
-        instant {
-            dimension "default"
-        }
+        instant { dimension "installtype" }
+
+        dev { applicationIdSuffix ".dev" }
+        qa { applicationIdSuffix ".test" }
+        prod { applicationIdSuffix "" }
     }
 
     compileOptions {

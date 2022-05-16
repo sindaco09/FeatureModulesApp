@@ -1,4 +1,3 @@
 <resources>
-    <string name="app_name">appTwo</string>
     <string name="title_dynamicfeature">Feature</string>
 </resources>

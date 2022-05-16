@@ -1,0 +1,24 @@
+ext.flavorConfig = {
+
+    flavorDimensions "default"
+
+    productFlavors {
+        dev {
+            dimension "default"
+            resValue "string", "app_name", "FeatureModulesApp Dev"
+            manifestPlaceholders = [host: "sindaco09.github.io"]
+        }
+
+        qa {
+            dimension "default"
+            resValue "string", "app_name", "FeatureModulesApp Test"
+            manifestPlaceholders = [host: "sindaco09.github.io"]
+        }
+
+        prod {
+            dimension "default"
+            resValue "string", "app_name", "FeatureModulesApp"
+            manifestPlaceholders = [host: "sindaco09.github.io"]
+        }
+    }
+}
