@@ -12,7 +12,6 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:name="com.indaco.apptwo.App"
         android:theme="@style/Theme.FeatureModulesApp">
         <activity
             android:name="com.indaco.apptwo.ui.screens.InstantLauncherActivity"
