@@ -21,7 +21,7 @@ buildscript {
         room_version = "2.3.0"
         threetenbp_version = "1.2.0"
         threetenbp_adapter_version = "1.0.2"
-        app_code = 119
+        app_code = 122
     }
 
     repositories {

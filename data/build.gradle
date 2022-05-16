@@ -32,7 +32,7 @@ android {
 dependencies {
 
     // Amplitude
-    api 'com.amplitude:android-sdk:2.23.0'
+//    api 'com.amplitude:android-sdk:2.23.0'
 
     // Core
     api "androidx.appcompat:appcompat:$appcompat_version"

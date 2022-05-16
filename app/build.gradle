@@ -83,6 +83,8 @@ dependencies {
     api project(path: ':data')
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    // Amplitude
+    api 'com.amplitude:android-sdk:2.23.0'
     androidTestImplementation('androidx.test.espresso:espresso-core:3.1.0', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

@@ -25,5 +25,5 @@
 -keep public class com.indaco.data.launcher.DynamicEntryPoint
 
 # Amplitude
-#-keep class com.google.android.gms.ads.** { *; }
-#-dontwarn okio.**
+-keep class com.google.android.gms.ads.** { *; }
+-dontwarn okio.**
