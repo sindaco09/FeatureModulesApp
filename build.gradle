@@ -3,7 +3,7 @@ buildscript {
     ext {
         build_tools_version = "30.0.3"
         target_version = 30
-        min_sdk_version = 26
+        min_sdk_version = 21
 
         appcompat_version = "1.3.1"
         camerax_version = "1.0.2"
@@ -21,7 +21,7 @@ buildscript {
         room_version = "2.3.0"
         threetenbp_version = "1.2.0"
         threetenbp_adapter_version = "1.0.2"
-        app_code = 117
+        app_code = 119
     }
 
     repositories {
@@ -29,6 +29,8 @@ buildscript {
         jcenter()
     }
     dependencies {
+        classpath 'com.google.gms:google-services:4.3.10'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
@@ -42,8 +44,8 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
-//        maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
-//        maven { url "https://nexus.upsight.com/nexus/content/repositories/upsight-android-release/" }
+        maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
+        maven { url "https://nexus.upsight.com/nexus/content/repositories/upsight-android-release/" }
         flatDir {
             dirs 'libs'
         }

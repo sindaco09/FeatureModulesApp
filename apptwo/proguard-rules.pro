@@ -23,3 +23,7 @@
 -keep public class com.indaco.dynamicfeature.DynamicActivity
 -keep public class com.indaco.dynamicfeature.DynamicFeaturePointImpl
 -keep public class com.indaco.data.launcher.DynamicEntryPoint
+
+# Amplitude
+#-keep class com.google.android.gms.ads.** { *; }
+#-dontwarn okio.**

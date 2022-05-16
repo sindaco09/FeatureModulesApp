@@ -5,6 +5,7 @@ plugins {
     id 'kotlin-parcelize'
     id 'dagger.hilt.android.plugin'
 }
+apply from: "${rootProject.projectDir}/flavors.gradle"
 
 android {
     compileSdk target_version
@@ -15,6 +16,8 @@ android {
         versionCode 1
         versionName "1.0"
     }
+
+    with flavorConfig
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
@@ -27,6 +30,9 @@ android {
 }
 
 dependencies {
+
+    // Amplitude
+    api 'com.amplitude:android-sdk:2.23.0'
 
     // Core
     api "androidx.appcompat:appcompat:$appcompat_version"
