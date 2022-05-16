@@ -2,13 +2,20 @@ package com.indaco.data.launcher
 
 import android.content.Context
 import android.content.Intent
+import java.lang.RuntimeException
 import java.util.*
 
 object DynamicNavigationHandler {
 
     private fun dynamicLauncherIntent(c: Context, destination: DynamicDestination): Intent {
-        val service = ServiceLoader.load(DynamicEntryPoint::class.java).first()
-        return service.getLaunchIntent(destination,c)
+        return try {
+            val service = ServiceLoader.load(DynamicEntryPoint::class.java).first()
+            System.console()?.printf("dynamicLauncherIntent: FOUND LOADER")
+            service.getLaunchIntent(destination,c)
+        } catch (e: RuntimeException) {
+            System.console()?.printf("dynamicLauncherIntent: EXCEPTION: $e")
+            Intent().setClassName(c.packageName, "com.indaco.dynamicfeature.DynamicActivity")
+        }
     }
 
     fun startDynamicActivity(c: Context) = c.startActivity(dynamicLauncherIntent(c, DynamicDestination.MainActivity))
