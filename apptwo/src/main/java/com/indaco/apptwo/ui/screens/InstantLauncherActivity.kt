@@ -13,5 +13,6 @@ class InstantLauncherActivity : AppCompatActivity() {
         Amplitude.getInstance().logEvent("InstantLauncherActivity launch");
 
         DynamicNavigationHandler.startDynamicActivity(this)
+        finish()
     }
 }
