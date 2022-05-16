@@ -49,7 +49,7 @@ android {
     flavorDimensions "default", "installtype"
 
     productFlavors {
-        instant { dimension "installtype" }
+        installed { dimension "installtype" }
 
         dev { applicationIdSuffix ".dev" }
         qa { applicationIdSuffix ".test" }
