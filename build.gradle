@@ -21,7 +21,7 @@ buildscript {
         room_version = "2.3.0"
         threetenbp_version = "1.2.0"
         threetenbp_adapter_version = "1.0.2"
-        app_code = 123
+        app_code = 125
     }
 
     repositories {
@@ -44,8 +44,8 @@ allprojects {
         google()
         jcenter()
         maven { url 'https://jitpack.io' }
-        maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
-        maven { url "https://nexus.upsight.com/nexus/content/repositories/upsight-android-release/" }
+//        maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
+//        maven { url "https://nexus.upsight.com/nexus/content/repositories/upsight-android-release/" }
         flatDir {
             dirs 'libs'
         }
