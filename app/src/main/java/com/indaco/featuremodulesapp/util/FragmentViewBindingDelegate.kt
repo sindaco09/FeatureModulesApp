@@ -75,11 +75,11 @@ fun <VH : RecyclerView.ViewHolder> RecyclerView.setNullableAdapter(
  */
 internal fun RecyclerView.clearReference() {
     addOnAttachStateChangeListener(object : View.OnAttachStateChangeListener {
-        override fun onViewAttachedToWindow(v: View?) {
+        override fun onViewAttachedToWindow(p0: View) {
 
         }
 
-        override fun onViewDetachedFromWindow(v: View?) {
+        override fun onViewDetachedFromWindow(p0: View) {
             this@clearReference.adapter = null
         }
     })
