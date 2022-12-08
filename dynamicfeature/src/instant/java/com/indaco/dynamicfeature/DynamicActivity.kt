@@ -12,6 +12,6 @@ class DynamicActivity : AppCompatActivity() {
         setContentView(R.layout.activity_dynamic)
         Log.d("TAG",AppTwoUtil.print())
 
-        InstantApps.showInstallPrompt(this, null, 9, null)
+//        InstantApps.showInstallPrompt(this, null, 9, null)
     }
 }

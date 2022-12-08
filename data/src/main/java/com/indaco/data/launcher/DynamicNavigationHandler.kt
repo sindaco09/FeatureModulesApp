@@ -12,7 +12,7 @@ object DynamicNavigationHandler {
             val service = ServiceLoader.load(DynamicEntryPoint::class.java).first()
             System.console()?.printf("dynamicLauncherIntent: FOUND LOADER")
             service.getLaunchIntent(destination,c)
-        } catch (e: RuntimeException) {
+        } catch (e: Exception) {
             System.console()?.printf("dynamicLauncherIntent: EXCEPTION: $e")
             Intent().setClassName(c.packageName, "com.indaco.dynamicfeature.DynamicActivity")
         }

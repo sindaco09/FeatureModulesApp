@@ -1,40 +1,42 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
     ext {
-        build_tools_version = "30.0.3"
-        target_version = 30
+        build_tools_version = "32.0.0"
+        target_version = 32
         min_sdk_version = 21
 
-        appcompat_version = "1.3.1"
-        camerax_version = "1.0.2"
-        camerax_view_version = "1.0.0-alpha26"
+        appcompat_version = "1.5.1"
+        camerax_version = "1.1.0"
+        camerax_view_version = "1.0.0-alpha32"
         constraint_version = "2.1.1"
         espresso_version = "3.3.0"
-        material_version = '1.3.0-rc01'
+        material_version = '1.4.0'
         gson_version = "2.8.6"
-        hilt_version = '2.40'
-        kotlin_version = '1.5.30'
-        ktx_version = '1.6.0'
-        lifecycle_version = "2.3.1"
+        hilt_version = '2.44'
+        kotlin_version = '1.7.0'
+        ktx_version = '1.7.0'
+        lifecycle_version = "2.5.0"
         nav_version="2.3.5"
         okhttp_version = "3.14.7"
-        room_version = "2.3.0"
-        threetenbp_version = "1.2.0"
+        room_version = "2.4.3"
+        threetenbp_version = "1.3.1"
         threetenbp_adapter_version = "1.0.2"
-        app_code = 125
+        app_code = 137
     }
 
     repositories {
         google()
-        jcenter()
+        mavenCentral()
     }
     dependencies {
 //        classpath 'com.google.gms:google-services:4.3.10'
 //        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.7.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.5.31"
         classpath "androidx.navigation:navigation-safe-args-gradle-plugin:$nav_version"
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
-        classpath "com.android.tools.build:gradle:7.0.3"
+
+
+        classpath 'com.android.tools.build:gradle:7.2.1'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.7.10"
 
     }
 }
@@ -42,7 +44,7 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
+        mavenCentral()
         maven { url 'https://jitpack.io' }
 //        maven { url 'https://oss.sonatype.org/content/repositories/ksoap2-android-releases' }
 //        maven { url "https://nexus.upsight.com/nexus/content/repositories/upsight-android-release/" }
