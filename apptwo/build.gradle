@@ -65,6 +65,7 @@ android {
     }
 
     dynamicFeatures = [':dynamicfeature']
+    namespace 'com.indaco.featuremodulesapp'
 }
 
 dependencies {

@@ -13,8 +13,6 @@ android {
     defaultConfig {
         minSdk min_sdk_version
         targetSdk target_version
-        versionCode 1
-        versionName "1.0"
     }
 
     with flavorConfig
@@ -27,6 +25,7 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+    namespace 'com.indaco.data'
 }
 
 dependencies {

@@ -10,9 +10,7 @@ android {
     compileSdk target_version
 
     defaultConfig {
-        applicationId "com.indaco.dynamicfeature"
         minSdkVersion min_sdk_version
-        targetSdkVersion target_version
     }
 
     buildTypes {
@@ -48,6 +46,7 @@ android {
     kotlinOptions {
         jvmTarget = '11'
     }
+    namespace 'com.indaco.dynamicfeature'
 }
 
 dependencies {
